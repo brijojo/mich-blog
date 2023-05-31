@@ -1,0 +1,19 @@
+@mixin self-center($pos:absolute){
+    position: $pos;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@mixin self-fill($pos:absolute) {
+    position: $pos;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin flex($align:center){
+    display: flex;
+    justify-content: $align;
+    align-items: $align;
+}

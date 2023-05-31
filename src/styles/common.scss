@@ -1,0 +1,8 @@
+// 全局样式
+@import url('./variables.scss');
+// ele样式覆盖
+@import url('./element-plus.scss');
+// 工具类函数
+@import url('./mixin.scss');
+// 通用配置
+@import url('./normalize.scss');
