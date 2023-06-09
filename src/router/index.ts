@@ -1,22 +1,12 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
-const routes: Array<RouteRecordRaw> = [
-    {
-        path: "/",
-        name: "",
-        redirect: "homepage",
-    },
-    {
-        path: "/homepage",
-        name: "homepage",
-        component: () => import("../views/HomePage.vue"),
-    }
-]
+import { createRouter, createWebHashHistory } from "vue-router";
+import PageRouter from "./page/index"
+import ViewRouter from "./view/index"
 
 const base_URL = process.env.NODE_ENV === "production" ? process.env.BASE_URL : ""
 const router = createRouter({
     // history: createWebHistory(process.env.BASE_URL), // web模式
     history: createWebHashHistory(), // 哈希模式
-    routes,
+    routes: [...PageRouter, ...ViewRouter],
 });
 
 

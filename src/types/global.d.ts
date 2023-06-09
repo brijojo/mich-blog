@@ -35,7 +35,7 @@ declare interface Setting {
     theme: boolean;
     menu: boolean;
 }
-// * 加载路由数据的key
+// * 加载路由数据的key  
 declare interface MenuKey {
     iconDefault: string;
     label: string;

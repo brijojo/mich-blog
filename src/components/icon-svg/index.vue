@@ -1,37 +1,37 @@
 <template>
-	<svg :class="svgClass" v-bind="$attrs" :style="{ color: color }" >
-		<use :xlink:href="iconName"/>
-	</svg>
+  <svg :class="svgClass" v-bind="$attrs" :style="{ color: color }">
+    <use :xlink:href="iconName" />
+  </svg>
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue';
+import { computed } from "vue";
 const props = defineProps({
-	name: {
-		type: String,
-		required: true
-	},
-	color: {
-		type: String,
-		default: ''
-	}
+  name: {
+    type: String,
+    required: true,
+  },
+  color: {
+    type: String,
+    default: "",
+  },
 });
 const iconName = computed(() => `#icon-${props.name}`);
 const svgClass = computed(() => {
-	if (props.name) {
-		return `svg-icon icon-${props.name}`;
-	}
-	return 'svg-icon';
+  if (props.name) {
+    return `svg-icon icon-${props.name}`;
+  }
+  return "svg-icon";
 });
 </script>
 
 <style lang="scss">
 .svg-icon {
-	width: 1em;
-	height: 1em;
-	overflow: hidden;
-	// vertical-align: middle;
-	vertical-align: -0.15em;
-	fill: currentcolor;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  // vertical-align: middle;
+  vertical-align: -0.15em;
+  fill: currentcolor;
 }
 </style>

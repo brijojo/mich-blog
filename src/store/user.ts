@@ -4,8 +4,8 @@ import { deepClone, encryption } from "../utils/util"
 import { defineStore } from 'pinia';
 import { PersistedStateOptions } from 'pinia-plugin-persistedstate';
 import { RouterMenu } from '../types/global';
-import { removeRefreshToken } from '../utils/token';
-import { rejects } from 'assert';
+// import { removeRefreshToken } from '../utils/token';
+// import { rejects } from 'assert';
 interface UserInfo {
     avatar: string;
     username: string;
@@ -70,19 +70,19 @@ export const useUserStore = defineStore({
                 })
             })
         },
-        //根据手机号登录
+        // 根据手机号登录
         // LoginByPhone(userInfo) {
         // 	return new Promise((resolve: (value?: unknown) => void) => {
-        // 		// loginByUsername(userInfo.phone, userInfo.code).then(res => {
-        // 		// 	const data = res.data.data;
-        // 		// 	this.SET_TOKEN(data);
-        // 		// 	this.DEL_ALL_TAG([]);
-        // 		// 	this.CLEAR_LOCK();
-        // 		// 	resolve();
-        // 		// });
+        // 		loginByUsername(userInfo.phone, userInfo.code).then(res => {
+        // 			const data = res.data.data;
+        // 			this.SET_TOKEN(data);
+        // 			this.DEL_ALL_TAG([]);
+        // 			this.CLEAR_LOCK();
+        // 			resolve();
+        // 		});
         // 	});
         // },
-        getUserInfo() {
+        GetUserInfo() {
             return new Promise((resolve, reject) => {
                 getUserInfo().then(res => {
                     const data = res.data;
@@ -93,7 +93,7 @@ export const useUserStore = defineStore({
                 }).catch(err => reject(err))
             })
         },
-        // 刷新token
+        // // 刷新token
         RefreshToken() {
             return new Promise((resolve, reject) => {
                 // state.refreshToekn
